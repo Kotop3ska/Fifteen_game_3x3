@@ -1,3 +1,7 @@
+"""
+Объединение всех методов решения задачи. Стартовая ситуация генерируется отдельной функцией.
+"""
+
 from collections import deque
 from random import choice
 from prettytable import PrettyTable
