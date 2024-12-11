@@ -89,6 +89,19 @@ def TwoSidedSearch(situation, goal_situation):
                     visited_goal.append(new_sit)
                     temp.append(Sit(new_sit, sit))  # Добавляем в список
         level_goal = temp
+        for sit_s in level_start:
+            for sit_g in level_goal:
+                if sit_s.value == sit_g.value:
+                    solution = []
+                    while sit_s != None:
+                        solution.append(sit_s.value)
+                        sit_s = sit_s.previous
+                    solution.reverse()
+                    solution.pop()
+                    while sit_g != None:
+                        solution.append(sit_g.value)
+                        sit_g = sit_g.previous
+                    return solution
 
 
 # начальная ситуация
